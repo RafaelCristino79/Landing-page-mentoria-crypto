@@ -116,15 +116,21 @@
         flex-direction: column;
     }
 
+    #sec-home {
+        margin-top: 80px;
+    }
+
     #sec-home .home-text {
         align-items: flex-start;
         text-align: start;
+        padding: 2%;
     }
 
     .home-img {
         display: flex;
         justify-content:center;
         align-items: center;
+        margin-left: 15px;
     }
     
 
@@ -259,8 +265,8 @@
         background-color: #F7931A;
         filter: blur(80px);
         position: absolute;
-        left: -28%;
-        top: 70%;
+        left: 28%;
+        top: 20%;
         z-index: -1;
     }¨
 
