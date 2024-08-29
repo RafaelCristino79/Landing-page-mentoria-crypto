@@ -923,6 +923,7 @@ section.value #flex {
     display: flex;
     width: 90%;
     flex-wrap: wrap;
+    padding-top: 30px;
 }
 
 .content-list {

@@ -352,6 +352,10 @@
         width: 100%;
     }
 
+    .value-title h1 {
+        font-size: 24pt;
+    }
+
     .value-content {
         width: 100%;
         align-items: center;
@@ -362,6 +366,13 @@
     .price-value {
         align-items: center;
     }
+
+    .price-value h2 {
+        font-size: 18pt;
+    }
+
+
+
 
 
 
