@@ -51,3 +51,27 @@ document.addEventListener("click", (event) => {
         nav.classList.remove("active");
     }
 });
+
+
+
+
+
+// função para o botão de subir
+
+// script.js
+window.addEventListener('scroll', function() {
+    let scrollButton = document.querySelector('.up-button');
+    let scrollButtonShadow = document.querySelector('.up-button-shadow');
+    
+    if (window.scrollY > 100) {
+        scrollButton.classList.add('show');
+        scrollButtonShadow.classList.add('show');
+    } else {
+        scrollButton.classList.remove('show');
+        scrollButtonShadow.classList.remove('show');
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}

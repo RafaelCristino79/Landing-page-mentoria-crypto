@@ -114,6 +114,50 @@ body {
 }
 
 
+.up-button {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    clip-path: circle(50%);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Inicialmente deslocado */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Efeito suave */
+    background-color: #F7931A;
+    z-index: 3;
+}
+
+.up-button-shadow {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(to bottom, #1d19251f, #44194d5b);
+    bottom: 40px;
+    right: 40px;
+    clip-path: circle(50%);
+    z-index: 2;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Inicialmente deslocado */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Efeito suave */
+}
+
+.up-button.show, .up-button-shadow.show {
+    opacity: 1; /* Visível quando a classe 'show' é adicionada */
+    transform: translateY(0); /* Volta à posição original */
+}
+
+
+
+.up-button i {
+    font-size: 20px;
+}
+
 /*Fim Estilos gerais */
 
 /* Estilização do Header */
@@ -160,6 +204,10 @@ body {
     background: none;
     cursor: pointer;
     display: none;
+}
+
+.nav-hamburguer i {
+    font-size: 16pt;
 }
 
 
@@ -530,9 +578,7 @@ section.btc #interface {
     gap: 15px;
 }
 
-.btc-title-txt h1{
-    color: #222222;
-}
+
 
 .btc-text {
     display: flex;
@@ -564,9 +610,6 @@ section.btc #interface {
 
 
 /* Estilização da sec btc / Seção 5*/
-
-
-
 
 
 /* Estilização Seção disclaimer / Seção 6 */
@@ -846,6 +889,13 @@ section.learn #flex {
     gap: 10px;
 }
 
+.learn-title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .learn-cards {
     display: flex;
     flex-direction: row;
@@ -904,26 +954,28 @@ section.value{
     border-bottom: 1px solid #ffaa0e;
     padding: 70px;
     background-color: #0e0e0e;
-
 }
 
 section.value #flex {
     display: flex;
     flex-direction: column;
+    
 }
 
 .value-title {
     border-bottom: 1px solid #2B2B2B;
     padding-bottom: 20px;
-    width: 90%;
+    width: 100%;
     text-align: center;
 }
 
 .value-content {
     display: flex;
-    width: 90%;
+    width: 100%;
     flex-wrap: wrap;
     padding-top: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 .content-list {
@@ -946,6 +998,7 @@ section.value #flex {
 .price-value {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .content-list-item {
