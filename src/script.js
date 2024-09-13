@@ -1,7 +1,7 @@
 const accordions = document.querySelectorAll('.accordion');
 
 accordions.forEach(accordion => (
-    accordion.addEventListener('click', () =>{
+    accordion.addEventListener('click', () => {
         const body = accordion.querySelector('.accordion-body');
         body.classList.toggle('active');
     })
@@ -41,34 +41,49 @@ const nav = document.querySelector("#navbar");
 
 hamburguer.addEventListener("click", () => {
     nav.classList.toggle("active");
-});
 
-// Função para fechar o menu ao clicar fora dele
-document.addEventListener("click", (event) => {
-    const isClickInside = nav.contains(event.target);
-
-    if (!isClickInside) {
-        nav.classList.remove("active");
+    if (nav.classList.contains("active")) {
+        // Adicionar a classe no body para desativar o scroll
+        document.body.classList.add("no-scroll");
+    } else {
+        // Remover a classe do body para ativar o scroll
+        document.body.classList.remove("no-scroll");
     }
 });
 
+// Fechar o menu ao clicar fora dele
+document.addEventListener("click", (event) => {
+    const isClickInside = nav.contains(event.target) || hamburguer.contains(event.target);
 
+    if (!isClickInside) {
+        nav.classList.remove("active");
+        document.body.classList.remove("no-scroll");
+    }
+});
 
+// Fechar o menu ao clicar em um item de menu
+nav.addEventListener("click", (event) => {
+    if (event.target.tagName === "A") { // Supondo que os itens do menu sejam <a>
+        nav.classList.remove("active");
+        document.body.classList.remove("no-scroll");
+    }
+});
 
-
-// função para o botão de subir
-
-// script.js
+// Função para o botão de subir
 window.addEventListener('scroll', function() {
     let scrollButton = document.querySelector('.up-button');
-    let scrollButtonShadow = document.querySelector('.up-button-shadow');
-    
+    let scrollButtonShadow = document.querySelector('.up-button-shadow'); // Adicione essa linha se você tiver um botão de sombra
+
     if (window.scrollY > 100) {
         scrollButton.classList.add('show');
-        scrollButtonShadow.classList.add('show');
+        if (scrollButtonShadow) {
+            scrollButtonShadow.classList.add('show');
+        }
     } else {
         scrollButton.classList.remove('show');
-        scrollButtonShadow.classList.remove('show');
+        if (scrollButtonShadow) {
+            scrollButtonShadow.classList.remove('show');
+        }
     }
 });
 

@@ -8,6 +8,10 @@
     color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 p {
     color: #9E9E9E;
     font-family: Inter;
@@ -133,21 +137,8 @@ body {
     z-index: 3;
 }
 
-.up-button-shadow {
-    position: fixed;
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(to bottom, #1d19251f, #44194d5b);
-    bottom: 40px;
-    right: 40px;
-    clip-path: circle(50%);
-    z-index: 2;
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateY(20px); /* Inicialmente deslocado */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Efeito suave */
-}
 
-.up-button.show, .up-button-shadow.show {
+.up-button.show{
     opacity: 1; /* Visível quando a classe 'show' é adicionada */
     transform: translateY(0); /* Volta à posição original */
 }
@@ -251,6 +242,10 @@ nav#navbar ul li a.nav-link::after {
 
 nav#navbar ul li a.nav-link:hover::after {
     width: 50%; /* Largura total do link */
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 /* Fim Estilização do Header */
